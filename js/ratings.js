@@ -8,14 +8,14 @@ function collect_ratings() {
    let rating = 0
  
 
-let elements = document.querySelectorAll(".rating");
+const elements = document.querySelectorAll(".rating");
 
-    elements.forEach((element) => {
+    elements.forEach(element => {
 
-        rating=parseInt (element.id.replace("star", " ")); 
+        rating = parseInt(element.id.replace("star", "")); 
             ratings.count += parseInt(element.value);
             ratings.sum += parseInt(element.value)*rating;
-        })
+        });
 
     if (ratings.count!== 0) {
 
@@ -34,4 +34,4 @@ document.addEventListener("change", () => {
     //muuttaa luvun näyttämään kokonaisluvun kahdella desimaalilla
     document.querySelector("#average").value=ratings.average.toFixed(2);
     
-})
+});
